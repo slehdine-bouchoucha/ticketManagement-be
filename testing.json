@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "002ac915-5ccc-4419-9c65-86628ca6f16a",
+		"name": "Tickets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28490025"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\":\"riadh@gmail.com\",\r\n\"password\":\"123456789\",\r\n\"otp\":\"076451\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create_Ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpYWRoQGdtYWlsLmNvbSIsImlhdCI6MTcwMjUzNDc1Nn0.neIVw1umRdjDLGJrY6_1hB7V3_4DZdWR6J6TdbI7Kxg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "broken pc",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "pc",
+							"type": "text"
+						},
+						{
+							"key": "createdBy",
+							"value": "657a7df642004417767a6101",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "IT",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Tickets",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpYWRoQGdtYWlsLmNvbSIsImlhdCI6MTcwMjUzNDc1Nn0.neIVw1umRdjDLGJrY6_1hB7V3_4DZdWR6J6TdbI7Kxg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"ala\",\r\n    \"fullName\":\"ala\",\r\n    \"email\":\"ala@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

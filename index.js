@@ -4,7 +4,13 @@ const cors = require("cors");
 const port = 3000;
 const connectDB = require("./config/MongoDB");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3002", // Allow requests from the frontend server
+    credentials: true, // Allow credentials like cookies, authorization headers, etc. (if needed)
+  })
+);
+
 app.use(express.json());
 
 connectDB();

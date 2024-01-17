@@ -9,17 +9,22 @@ TicketRouter.post(
   "/",
   isAuthenticated,
   upload.array("images"),
-  require("../Controllers/TicketsControllers/AddTicketController")
+  require("../Controllers/TicketsControllers/AddTicketController"),
 );
 
 TicketRouter.get(
   "/",
   isAuthenticated,
-  require("../Controllers/TicketsControllers/GetTicketsController")
+  require("../Controllers/TicketsControllers/GetTicketsController"),
+);
+TicketRouter.get(
+  "/:ticketId",
+  isAuthenticated,
+  require("../Controllers/TicketsControllers/getTicketByIdController"),
 );
 TicketRouter.put(
   "/:ticketId",
   isAuthenticated,
-  require("../Controllers/TicketsControllers/StatusTicketController")
+  require("../Controllers/TicketsControllers/StatusTicketController"),
 );
 module.exports = TicketRouter;
